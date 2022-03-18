@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Studio Bliss | Work</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/oux4kyb.css">
+	<link rel="shortcut icon" href="images/logos/favicon.ico">
+	<meta name="description" content="Explore the work of Studio Bliss, a design studio based in Austin, TX.">
+  	<meta name="author" content="Rachel Epps">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="modernizr.custom.05819.js"></script>
+	<style>
+		/* used to hide the api iframe before button is clicked and to hide the 
+		instructions after the button is clicked to make room for the iframe */
+		.hidden {
+			visibility: hidden;
+			max-height: 0;
+			width: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul class="nav-items">
+				<li><a href="index.html"><img id="navLogo" src="images/logos/studioBliss_symbol@.5x.png" alt="Logo"></a></li>
+				<li><a class="activePage" href="work.html">Work</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="request.html">Request</a></li>
+				<li><a href="security.html">Security</a></li>
+			</ul>
+		</nav>
+	</header>
+	<h2 class="work">Your Vision Brought to Life</h2>
+	<h3 class="mainSubhead">Every design has a story.</h3>
+	<main class="gallery">
+		<figure class="gallery-item">
+			<img src="images/logoDesign/joyfulMainLogo.jpg" id="joyfulMainLogo" class ="gallery-img" alt="The Joyful Empty Nester Logo Design">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/digital_illustrations/nancyInTheClouds.png" id="nancy" class ="gallery-img" alt="Digital illustration of old lady playing ukelele on top of a cloud">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/paintings/darkSideCanvasSet.png" id="darkSide" class="gallery-img" alt="Painted canvas set of the Dark Side of the Moon Pink Floyd album cover">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/3D_modeling/vrEDU_forwardAngle_noBubble-min.png" id="vrEduFwdAngle" class="gallery-img" alt="Virtual Reality for Education 3D Modeled Interface Concept">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/digital_illustrations/Creativity-Queen-min.png" id="creativityQueen" class="gallery-img" alt="Digital illustration of a brightly colored, fierce-looking woman">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/printDesign/Table-Tent-Mockup-min.jpg" id="tableTent" class="gallery-img" alt="Adobe MAX Table Tent Mockup Featuring Paula Scher">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/paintings/meltingStudio.png" id="meltingStudio" class="gallery-img" alt="Surrealist painting of music instruments on a stage melting">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/digital_illustrations/timeIsRunningOut.jpg" id="timeIsRunningOut" class="gallery-img" alt="Abstract self portrait made up of geometric figures with clock hands in eyes">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/logoDesign/unfilteredBlueLogo.png" id="unfilteredLogo" class="gallery-img" alt="Game design company logo of a coffee cup with white foam that outlines a face wearing VR goggles">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/digital_illustrations/universePaintingOverhead.jpg" id="universePainting" class="gallery-img" alt="Edited photograph of artist painting a lighthouse scene">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/digital_illustrations/rachel_epps_index_circle-min.png" id="indexCircle" class="gallery-img" alt="Colorful vector bubbles expanding outwards from text that says Rachel Epps Design">
+		</figure>
+		<figure class="gallery-item">
+			<img src="images/webDesign/adobeMAX_interactiveRegistrationForm.png" id="maxRegistrationForm" class="gallery-img" alt="Adobe MAX Conference Interactive Registration Form Mockup">
+		</figure>
+		<article id="projectIdeas">
+			<h4>Ideas, Anyone?</h4>
+			<h5>Share your suggestions for my next project!</h5>	
+			<form id="inspoForm">
+				<fieldset>
+				  <label for="suggestionBox" id="placeLabel">
+					Enter a project suggestion, then click Submit:
+				  </label>
+				  <input type="text" id="suggestionBox" />
+				</fieldset>
+				<fieldset>
+				  <button type="button" id="button">Submit</button>
+				</fieldset>
+			</form>
+			<div id="results">
+				<ul>
+				   <li id="item1"></li>
+				   <li id="item2"></li>
+				   <li id="item3"></li>
+				   <li id="item4"></li>
+				   <li id="item5"></li>
+				</ul>
+				<p id="thatsEnough"></p>
+			</div>
+		 </article>
+		 <article id="instructionBox" class="focusArea">
+			 <h3 id="boxedH3" class="mainSubhead">Dynamic 3D Portfolio</h3>
+			 <aside id="apiInstructions" class="talkbubble">
+				<p id="sketchfabTxt">
+					Click the button below to load the 3D model. Navigate the scene with your cursor in the given view or in fullscreen mode. Click the Model Inspector to view specific information on materials, textures, polygons, etc. 
+					Channels are available to toggle between texture maps, and you can even use the UV Checker to see how materials are laid out in a 1:1 space. Enter into Wireframe Mode to see exactly how the geometry is made up. 
+				</p>
+			</aside>
+			<!-- adds an empty iframe with attributes -->
+			<iframe class="hidden" src="https://sketchfab.com/3d-models/vredu-interface-concept-187f1312462f420e8c978615048c51d7" id="api-frame" allow="autoplay; fullscreen; xr-spatial-tracking"></iframe>
+			 <!-- when clicked, run api function to load the iframe -->
+			 <button id="modelBtn" onclick="loadmodel()">Interact with 3D Model</button>
+			 <div id="modelBox"></div>
+		</article>
+	</main>
+	<footer>
+		<a href="index.html"><img id="footerLogo" src="images/logos/studioBliss_main_stacked@0.5x.png" alt="Studio Bliss Logo"></a>
+		<p>
+			Copyright &copy; Rachel Epps 2021<br>
+			design@rachelepps.com<br>
+			Austin, TX
+		</p>
+    </footer>
+	<script src="https://static.sketchfab.com/api/sketchfab-viewer-1.10.3.js"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script>
+		// global variables
+		var i = 1; 					// counter variable
+		var listItem = "";			// variable for input list item, empty string to later combine counter variable and user input
+		
+		// function to add input to list and declare behavior to be executed dependent upon input value
+		function processInput() {
+		   if (i <= 5) {		// as long as the input value is less than or equal to five, execute the following:
+			  listItem = "item" + i;	// concatenates string (item) with the value of the counter variable (i = 1)
+			  document.getElementById(listItem).innerHTML = document.getElementById("suggestionBox").value; 	// adds entered value to list by setting list item equal to input
+			  document.getElementById("suggestionBox").value = ""; 		// clears text box upon hitting submit, increasing counter by 1 each time
+			  if (i === 5) {			// once the input value has reached five, execute the following:
+				 document.getElementById("thatsEnough").innerHTML = "Thanks for your suggestions.";			// print thank you message  
+			  }
+			  i++;
+		   }
+		}
+  
+		// add event listener to Submit button with backward compatibility for IE8
+		var btn = document.getElementById("button");			// defines variable to call event listener for submit button
+		if (btn.addEventListener) {								// default statement that adds input to list after clicking submit in modern browsers
+		   btn.addEventListener("click", processInput, false);
+		} else if (btn.attachEvent) {							// conditional statement that provides fallback for IE8
+		   btn.attachEvent("onclick", processInput);
+		}
+
+		/* CH 11 SketchFab 3D Model API */
+		// initialize the iframe api viewer
+
+		// assigns a name to empty iframe placed in html
+		var iframe = document.getElementById( 'api-frame' );
+
+		// sketchfab url anchor of the 3D model I chose to display 
+		var uid = '187f1312462f420e8c978615048c51d7';
+		var client = null;
+
+		function loadmodel(){
+			document.addEventListener('load', () => console.log( 'viewerready' ))
+
+			// assigns null variable to latest version of the viewer api
+			var client = new Sketchfab( iframe );
+
+			// run iframe client to load model specified under uid
+			client.init( uid, {
+				// invoke this callback function when viewer is successfully initialized
+				success: function onSuccess( api ){
+					// load and start the client; pass api object to callback to enable interaction
+					console.log( 'Success' );
+					api.load();
+					api.start();
+					
+					// callback function to display the viewer, show the iframe, and make changes to CSS styles
+					api.addEventListener( 'viewerready', function() {
+						console.log( 'Viewer is ready' );
+						// once the viewer is ready, show the iframe
+						let $apiFrame = document.getElementById( 'api-frame' );
+						$apiFrame.classList.remove( 'hidden' ); 	// remove hidden class
+
+						// * CH 12 * replace adding instructions to .hide class with jQuery slideDown, followed by hide animation
+						// give a label to the talk bubble message that explains how to use the client
+						//var instructions = document.getElementById('apiInstructions');
+						// add hidden class to replace message with viewer
+						//instructions.classList.add('hidden');	
+						// jQuery modification - instructions now slide down, then hide after a delay
+						$('#apiInstructions').slideDown('slow').hide('5000');
+						
+						// * CH 12 * replace assignment to new ID with animation that simply adds padding to container so that viewer fits inside
+						// reassign container to a new ID that follows different CSS rules in order to fit viewer	
+						// document.getElementById("instructionBox").id = "modelBox";
+						// jQuery modification - container now expands down with 13em of extra padding
+						$('#instructionBox').animate({
+							paddingBottom: '13em'
+						});
+					} );
+				},
+				// write an error message to the console if viewer fails to initialize
+				error: function onError( callback ){
+					console.log( this.error );
+				},
+				// extra viewer settings
+				camera: 0,		// enable initial zoom animation on load
+				autospin: 0.3	// automatically spin the model 360 degrees, slowly, on loop
+			} );
+		};
+	 </script>
+</body>
+</html>

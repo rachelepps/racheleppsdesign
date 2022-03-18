@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Studio Bliss | Design Requests</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/oux4kyb.css">
+	<link rel="shortcut icon" href="images/logos/favicon.ico">
+	<meta name="description" content="Submit information to have your business cards designed and printed.">
+  	<meta name="author" content="Rachel Epps">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="modernizr.custom.05819.js"></script>
+    <script src="request.js"></script>
+</head>
+
+<body class="requestContainer">
+	<header>
+		<nav>
+			<ul class="nav-items">
+				<li><a href="index.html"><img id="navLogo" src="images/logos/studioBliss_symbol@.5x.png" alt="Logo"></a></li>
+				<li><a href="work.html">Work</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+                <li><a class="activePage" href="request.html">Request</a></li>
+				<li><a href="security.html">Security</a></li>
+			</ul>
+		</nav>
+	</header>
+        <main id="dynamicContent" class="contentWrap">
+            <h2 class="work">Design Requests</h2>  
+	   <!-- <section class="focusArea">
+				<h3 class="mainSubhead">Mockup Generator</h3>
+				<h4 class="longHeading">Bring your ideas to life with instant &amp; realistic mockups, available for you to customize and submit as style guides for your next project</h4>
+				<button onclick="loadMockup()">Generate Mockup Preview</button>
+				<div id="mockupDisplay"></div>
+			</section> -->
+            <section class="focusArea">    
+                <h3 class="mainSubhead">Business Card Creator</h3>
+                <h4 class="longHeading">Submit your business' information to have your business cards designed and printed</h4>
+                <!-- Labels and inputs for creating custom objects -->
+				<label for="txt_name">Business Name:</label>
+                <input id="txt_name" type="text"><br>
+                <label for="txt_industry">Business Industry:</label>
+                <input id="txt_industry" type="text"><br>
+                <label for="txt_phone">Business Phone Number:</label>
+                <input id="txt_phone" type="text"><br>
+                <label for="txt_website">Business Website Address:</label>
+                <input id="txt_website" type="text"><br>
+				<!-- Button set to call custom object creator function on click -->
+                <button id="btn_business" class="jumpToCalc hvr-bob" onclick="createCard()">Create Business Card</button>
+            </section>
+            <aside id="bCardGrid">
+                <div id="businessDisplay">
+                    <!-- This area is set aside for creating new business card objects -->
+                </div>
+            </aside>
+			<article id="priceEst">
+				<h3 class="mainSubhead">Design Requests | Pricing Estimator</h3>
+				<!-- Pricing Calculator Run by JavaScript -->
+				<form action="validate.html" id="costEstimator" class="form">
+					<fieldset>
+						<p class="instructions">Fixed Packages &cudarrr;</p>
+						<!-- Checkbox Inputs for Toggle Functions -->
+						<input type="checkbox" id="logoDesign" name="logoDesign" onclick="calcTotal()" />
+						<label for="logoDesign">
+							Logo Design | $200 for 3 mockups &amp; 1 final deliverable
+						</label>
+						<input type="checkbox" id="socialDesign" name="socialDesign" onclick="calcTotal()" />
+						<label for="socialDesign">
+							Social Media Campaign | $900 for 30 posts
+						</label>
+						<input type="checkbox" id="uiDesign" name="uiDesign" onclick="calcTotal()" />
+						<label for="uiDesign">
+							User Interface Mockup | $1250 includes user flows, interactive prototype &amp; 3D model
+						</label>
+						<p class="instructions">Enter Quantity &cudarrr;</p>
+						<!-- Numerical Inputs for calcTotal Function -->
+						<label for="bCardDesign">Business Cards (Includes Design &amp; Print)</label>
+						<select name="bCardDesign" id="bCardDesign" class="dropdown" onchange="calcTotal()">
+							<option value="0">Select Package Amount</option>
+							<option value="25">25 Cards | $110</option>
+							<option value="50">50 Cards | $120</option>
+							<option value="100">100 Cards | $140</option>
+							<option value="200">200 Cards | $180</option>
+							<option value="300">300 Cards | $220</option>
+							<option value="400">400 Cards | $260</option>
+							<option value="500">500 Cards | $300</option>
+							<option value="1000">1000 Cards | $400</option>
+							<option value="2000">2000 Cards | $800</option>
+							<option value="5000">5000 Cards | $2,000</option>
+						</select>
+						<label for="webDesign">Website Page Design | $200/page</label>
+						<select name="webDesign" id="webDesign" class="dropdown" onchange="calcTotal()">
+							<option value="0">Select Web Page Quantity</option>
+							<option value="Page1">Single Landing Page | $200</option>
+							<option value="Page2">Two Web Pages | $400</option>
+							<option value="Page3">Three Web Pages | $600</option>
+							<option value="Page4">Four Web Pages | $800</option>
+							<option value="Page5">Five Web Pages | $1000</option>
+							<option value="Page6">Six Web Pages | $1200</option>
+							<option value="Page7">Seven Web Pages | $1400</option>
+							<option value="Page8">Eight Web Pages | $1600</option>
+						</select>
+						<label for="newsletterDesign">Newsletter Design | $350/edition</label>
+						<select name="newsletterDesign" id="newsletterDesign" class="dropdown" onchange="calcTotal()">
+							<option value="0">Select Edition Quantity</option>
+							<option value="Edition1">Single Edition | $350</option>
+							<option value="Edition2">Two Editions | $700</option>
+							<option value="Edition3">Three Editions | $1,050</option>
+							<option value="Edition6">Six Editions | $2,100</option>
+							<option value="Edition12">Twelve Editions | $4,200</option>
+						</select>
+						<label for="modelDesign">3D Modeled Assets | Starting at $200</label>
+						<select name="modelDesign" id="modelDesign" class="dropdown" onchange="calcTotal()">
+							<option value="0">Select Asset Option</option>
+							<option value="Simple1">One Simple Asset | $200</option>
+							<option value="Simple5">Five Simple Assets | $900</option>
+							<option value="Complex1">One Complex Asset | $400</option>
+							<option value="Complex5">Five Complex Assets | $1,900</option>
+						</select>
+						<div id="calcEst">
+							<!-- Calculation Results Appear Here: -->
+							<p>Your proposed design estimate is... <span id="estimate"></span></p>
+							<!-- Takes user to validation page, thanking them for submitting the request -->
+							<button id="getCalc" class="jumpToCalc hvr-bob" value="Submit">Request Design(s)</button>
+						</div>
+					</fieldset>
+				</form>
+			</article>
+        </main>
+	<footer id="push">
+		<a href="index.html"><img id="footerLogo" src="images/logos/studioBliss_main_stacked@0.5x.png" alt="Studio Bliss Logo"></a>
+		<p>
+			Copyright &copy; Rachel Epps 2021<br>
+			design@rachelepps.com<br>
+			Austin, TX
+		</p>
+    </footer>
+</body>
+</html>
